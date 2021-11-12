@@ -1,0 +1,43 @@
+---
+layout: default
+title: Plyr (3.6.9)
+css:
+- https://cdn.plyr.io/3.6.9/plyr.css
+js:
+- https://cdn.plyr.io/3.6.9/plyr.polyfilled.js
+kinds:
+  HLS: "application/x-mpegURL"
+---
+
+{% include playform.html persist="plyr" %}
+
+<section>
+  <video
+    width="600"
+    height="300"
+    id="example"
+    playsinline
+    controls></video>
+</section>
+
+<script>
+const player = new Plyr('#example'),
+      manifest = document.getElementById('manifest'),
+      kind = document.getElementById('kind');
+document.getElementById('playform').onsubmit = () => {
+  persistAll();
+  try {
+    player.source = {
+      type: 'video',
+      sources: [{
+        src: manifest.value,
+        type: kind.value,
+      }]
+    };
+    player.play();
+  } catch (e) {
+    console.log('OMG',e);
+  }
+  return false;
+};
+</script>

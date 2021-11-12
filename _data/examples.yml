@@ -1,6 +1,9 @@
 dash:
-  - name: Sintel
-    url: https://s3.amazonaws.com/_bc_dml/example-content/sintel_dash/sintel_vod.mpd
+- name: "Dash: Sintel"
+  url: https://s3.amazonaws.com/_bc_dml/example-content/sintel_dash/sintel_vod.mpd
+
 hls:
-  - name: Tears of Steel
-    url: https://s3.amazonaws.com/_bc_dml/example-content/tears-of-steel/playlist.m3u8
+- name: "HLS: Tears of Steel"
+  url: https://s3.amazonaws.com/_bc_dml/example-content/tears-of-steel/playlist.m3u8
+- name: "HLS: Big Buck Bunny"
+  url: "https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"

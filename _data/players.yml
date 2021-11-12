@@ -1,54 +1,54 @@
-- short_name: 'Brightcove: HLS'
-  long_name: 'Brightcove Player: HLS'
-  url: '/bc-player-hls'
+- short_name: 'VideoJS'
+  long_name: 'VideoJS'
+  url: '/players/videojs'
   sidebar: true
   description: >
-    The Brightcove Player is a high-performance, cross-platform HTML5-first
-    video player that loads quickly, delivers high-quality adaptive bitrate
-    HLS video across desktop and mobile platforms, and integrates with your
-    favorite advertising and analytics systems.
-
-- short_name: 'Brightcove: Dash'
-  long_name: 'Brightcove Player: Dash'
-  url: '/bc-player-dash'
-  sidebar: true
-  description: ''
+    Video.js is a web video player built from the ground up for an HTML5 world.
+    It supports HTML5 video and modern streaming formats, as well as YouTube,
+    Vimeo, and even Flash (through plugins, more on that later).
 
 - short_name: 'Shaka'
   long_name: 'Shaka Player'
-  url: '/shaka'
+  url: '/players/shaka'
+  sidebar: true
   description: >
     Shaka Player is an open-source JavaScript library for adaptive media.
     It plays adaptive media formats (such as DASH and HLS) in a browser,
     without using plugins or Flash. Instead, Shaka Player uses the open web
     standards MediaSource Extensions and Encrypted Media Extensions.
 
-- short_name: 'DashIF Reference'
-  long_name: 'Dash Industry Forum Reference Client'
-  url: '/dashjs'
+- short_name: 'Plyr'
+  long_name: 'Plyr'
+  url: '/players/plyr'
   sidebar: true
   description: >
-    A reference client implementation for the playback of MPEG DASH via
-    JavaScript and compliant browsers.
+    Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers.
+
+- short_name: 'External: DashIF'
+  long_name: 'External: Dash Industry Forum Reference Client'
+  external: true
+  url: 'https://reference.dashif.org/dash.js/'
+  sidebar: true
+  description: >
+    Link to the DashIF maintained reference player page
+
+- short_name: 'External: Bitmovin'
+  long_name: 'External: Bitmovin'
+  external: true
+  url: 'https://bitmovin.com/demos/stream-test'
+  sidebar: true
+  description: >
+    Link to the Bitmovin maintained example player page
+
+- short_name: 'External: JWPlayer'
+  long_name: 'External: JWPlayer'
+  external: true
+  url: 'https://developer-tools.jwplayer.com/stream-tester'
+  sidebar: true
+  description: >
+    Link to the JWPlayer maintained example player page
 
 - short_name: 'Chromecast'
   long_name: 'Chromecast Sender Player'
   url: '/chromecast-sender'
   description: ''
-
-- short_name: 'VideoJS HLS'
-  long_name: 'VideoJS HLS'
-  url: '/videojs-contrib-hls'
-  sidebar: true
-  description: >
-    videojs-contrib-hls lets you use a single format and deliver adaptive
-    streaming video to all major desktop and mobile browsers.
-
-- short_name: 'VideoJS: Dash'
-  long_name: 'VideoJS MPEG-DASH'
-  url: '/videojs-contrib-dash'
-  sidebar: true
-  description: >
-    videojs-contrib-dash lets you use a single format and deliver adaptive
-    streaming video to many recent HTML5 browsers.
-

@@ -3,17 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-{% seo %}
+    {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/bootstrap-iso.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% for u in page.css %}
+    <link rel="stylesheet" href="{{ u }}">
+    {% endfor %}
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     <script src="{{ '/js/common.js' | relative_url }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div class="wrapper">
@@ -27,15 +26,22 @@
          <ul>
             {% for p in site.data.players %}
             {% if p.sidebar %}
-            <li><a href="{{ p.url | relative_url }}">{{ p.short_name }}</a></li>
+            <li>
+              <a href="{{ p.url | relative_url }}"
+                {% if p.external %}target="_blank"{% endif %}
+                >{{ p.short_name }}</a></li>
             {% endif %}
             {% endfor %}
             <li><a href="{{ '/' | relative_url }}">All Players</a></li>
          </ul>
          <a class="buttons github" href="{{ site.github.repository_url }}">View On GitHub</a>
       </header>
+        {% for u in page.js %}
+        <script src="{{ u }}"></script>
+        {% endfor %}
 
       <section>
+        <h1>{{ page.title }}</h1>
         {{ content }}
       </section>
 
@@ -55,5 +61,6 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+    <script>{{ page.script }}</script>
   </body>
 </html>

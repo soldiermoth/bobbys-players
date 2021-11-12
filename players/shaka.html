@@ -1,28 +1,16 @@
 ---
 layout: default
+title: Shaka (2.1.0)
+js:
+- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.debug.externs.js
+- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.debug.js
+- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.externs.js
+- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.js
+kinds:
+  Dash: "application/dash+xml"
 ---
-<h1>Shaka</h1>
 
-<!--  Shaka Player -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.debug.externs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.debug.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.externs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.js"></script>
-
-<section class="bootstrap-iso">
-  <form id="playform">
-    <div class="form-group">
-      <label for="manifest">DASH Manifest:</label>
-      <input type="text" class="form-control" id="manifest" name="manifest" data-manifest-target data-persist="dash-manifest">
-    </div>
-    <div class="form-group">
-      <label for="widevine-url">Widevine License URL: (Optional)</label>
-      <input type="text" class="form-control" id="widevine-url" name="manifest" data-persist="dash-widevine">
-    </div>
-    <button type="submit" class="btn btn-primary btn-lg">Play!</button><br><br>
-    {% include examples.html kind="dash" %}
-  </form>
-</section>
+{% include playform.html persist="shaka" drm=true %}
 
 <section>
   <video id="video"

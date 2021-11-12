@@ -1,0 +1,35 @@
+<section class="bootstrap-iso">
+  <form id="playform">
+    <div class="form-group">
+      <label for="manifest">Manifest:</label>
+      <input type="text"
+        data-manifest-target
+        data-persist="{{ include.persist }}-manifest"
+        class="form-control" id="manifest" name="manifest">
+    </div>
+
+    {%if page.kinds %}
+    <div class="form-group">
+      <label for="kind">Kind:</label>
+      <select name="kind" id="kind" class="form-control">
+        {% for item in page.kinds %}
+        <option value="{{ item[1] }}">{{ item[0] }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    {%endif%}
+
+    {%if include.drm %}
+    <div class="form-group">
+      <label for="widevine-url">Widevine License URL: (Optional)</label>
+      <input type="text" class="form-control" id="widevine-url" name="License" data-persist="{{ include.persist }}-widevine">
+    </div>
+    {%endif%}
+
+    <button type="submit" class="btn btn-primary btn-lg">Play!</button><br><br>
+    {% for item in page.kinds %}
+      {% capture ex %}{{ item[0] | downcase }}{%endcapture%}
+      {% include examples.html kind=ex %}
+    {% endfor %}
+  </form>
+</section>
