@@ -1,11 +1,8 @@
 ---
 layout: default
-title: Shaka (2.1.0)
+title: Shaka (4.16.5)
 js:
-- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.debug.externs.js
-- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.debug.js
-- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.externs.js
-- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.1.0/shaka-player.compiled.js
+- https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.16.5/shaka-player.compiled.js
 kinds:
   Dash: "application/dash+xml"
 ---
@@ -29,8 +26,7 @@ kinds:
   }
   // Init App
   document.addEventListener('DOMContentLoaded',() => {
-    // Install built-in polyfills to patch browser incompatibilities.
-    shaka.polyfill.installAll();
+    // Check if browser is supported (polyfills removed in v3+)
     if (!shaka.Player.isBrowserSupported()) {
       // This browser does not have the minimum set of APIs we need.
       console.error('Browser not supported!');
