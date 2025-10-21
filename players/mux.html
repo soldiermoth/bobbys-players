@@ -1,0 +1,32 @@
+---
+layout: default
+title: Mux Player (3.5.1)
+js:
+- https://cdn.jsdelivr.net/npm/@mux/mux-player@3.5.1
+kinds:
+  HLS: "application/x-mpegURL"
+  Dash: "application/dash+xml"
+---
+
+{% include playform.html persist="mux" %}
+
+<section>
+  <mux-player
+    id="example"
+    style="width: 600px; height: 300px;"
+    controls
+    playsinline></mux-player>
+</section>
+
+<script>
+const player = document.getElementById('example'),
+      manifest = document.getElementById('manifest'),
+      kind = document.getElementById('kind');
+document.getElementById('playform').onsubmit = () => {
+  persistAll();
+  player.src = manifest.value;
+  player.streamType = kind.value === 'application/dash+xml' ? 'on-demand' : 'on-demand';
+  player.play();
+  return false;
+};
+</script>

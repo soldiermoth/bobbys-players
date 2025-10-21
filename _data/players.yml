@@ -24,6 +24,15 @@
   description: >
     Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers.
 
+- short_name: 'Mux'
+  long_name: 'Mux Player'
+  url: '/players/mux'
+  sidebar: true
+  description: >
+    Mux Player is a web component for video playback that supports HLS and DASH streaming.
+    Built by Mux, it provides a modern, customizable player with built-in performance monitoring
+    and advanced playback features.
+
 - short_name: 'External: DashIF'
   long_name: 'External: Dash Industry Forum Reference Client'
   external: true
